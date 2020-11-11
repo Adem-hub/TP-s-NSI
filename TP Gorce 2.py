@@ -1,4 +1,6 @@
 import mysql.connector
+import random
+
 
 con= mysql.connector.connect(host='127.0.0.1 ',database='videotheque',user='root',password='')
 cursor=con.cursor()
@@ -29,8 +31,8 @@ def exo1():
     b=str(input('Votre mail: '))
     for i in range(len(users)):
         if a and b in users[i]:
-            return 'tu est dans la BDD !'
-    return "tu n'est pas reférencé dans la BDD"
+            return True
+    return False
 
 def exo2():
     a=str(input('votre nom: ' ))
@@ -53,9 +55,9 @@ def exo3():
 def exo4():
     var=str(input('donnez une chaine de caractères: '))
     for i in range(len(films)):
+        nom_real=''
         if var in films[i][1]:
             id_real=films[i][5]
-            nom_real=''
             for j in range(len(realisateurs)):
                 if id_real in realisateurs[j]:
                     nom_real=realisateurs[j][1]+' '+ realisateurs[j][2]
@@ -83,4 +85,7 @@ def exo5():
 
             print(films[i][1]+', realisé par: '+nom_real+', avec comme acteurs: '+str(P))
 
+L=[exo1,exo2,exo3,exo4,exo5]
+a=random.choice(L)
+b=a()
 
