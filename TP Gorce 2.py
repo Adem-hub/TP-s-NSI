@@ -50,7 +50,7 @@ def exo3():
     var=str(input('donnez une chaine de caractères: '))
     for i in range(len(films)):
         if var in films[i][1]:
-            print(films[i][1]+', realisé par: '+nom_real)
+            print(films[i][1])
 
 def exo4():
     var=str(input('donnez une chaine de caractères: '))
@@ -82,8 +82,8 @@ def exo5():
                     if L[m]== acteurs[n][0]:
                         ac=acteurs[n][1]+ ' '+acteurs[n][2]
                         P.append(ac)
-
-            print(films[i][1]+', realisé par: '+nom_real+', avec comme acteurs: '+str(P))
+            w=", "
+            print(films[i][1]+', realisé par: '+nom_real+', avec comme acteurs: '+str(w.join(P)))
 
 L=[exo1,exo2,exo3,exo4,exo5]
 a=random.choice(L)
