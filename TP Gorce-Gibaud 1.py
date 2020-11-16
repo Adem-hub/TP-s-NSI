@@ -101,9 +101,15 @@ class ville:
         self.latitude_dms = tableau2[x][24]
         self.zmin = tableau2[x][25]
         self.zmax = tableau2[x][26]
+        
+        
     def Migration(self,ville,n):
-        ville.popu2012+=n
-        self.popu2012-=n
+        ville.popu2010 -= n
+        self.popu2010 += n
+        sql = 'UPDATE villes_france_free SET ville_population_2010 = %s WHERE ville_id = %s'
+        maj = (self.popu2010,self.id)
+        cursor.execute(sql,maj)
+        con.commit()
 
 
 L_Villes=[]
