@@ -62,6 +62,7 @@ def exo4():
                 if id_real in realisateurs[j]:
                     nom_real=realisateurs[j][1]+' '+ realisateurs[j][2]
             print(films[i][1]+', realisé par: '+nom_real)
+            print()
 
 def exo5():
     var=str(input('donnez une chaine de caractères: '))
@@ -84,8 +85,8 @@ def exo5():
                         P.append(ac)
             w=", "
             print(films[i][1]+', realisé par: '+nom_real+', avec comme acteurs: '+str(w.join(P)))
+            print()
 
 L=[exo1,exo2,exo3,exo4,exo5]
 a=random.choice(L)
 b=a()
-
